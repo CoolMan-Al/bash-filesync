@@ -15,7 +15,7 @@ time {
     
     if [ -d $DEST ]; then
         echo -e "\n Pulling Files from Sync Drive\n====================================="
-	rsync -Pruv $DEST/!(Media) $SOURCE/
+	rsync -Pruv $DEST/!('file/folder') $SOURCE/ #Insert file/folder to exclude from syncrhonisation
         rsync -Pruv $DEST/.bashrc $SOURCE/.bashrc
     
         notify-send -a 'File Synchroniser' 'Synchronisation Completed'
