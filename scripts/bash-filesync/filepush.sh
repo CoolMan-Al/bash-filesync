@@ -16,12 +16,13 @@ time {
     if [ -d $DEST ]; then
         echo -e "\n Pushing Files to Sync Drive/\n=====================================" 
         #Insert folder name here
-        rsync -Pruv $SOURCE/'folder1' $DEST/ 
-        rsync -Pruv $SOURCE/'folder2' $DEST/ 
-        rsync -Pruv $SOURCE/'folder2' $DEST/
-        rsync -Pruv $SOURCE/'file1' $DEST/'file1'
-        rsync -Pruv $SOURCE/'file2' $DEST/'file2'
-        rsync -Pruv $SOURCE/'file3' $DEST/'file3'
+        rsync -Pruv $SOURCE/Documents $DEST/
+        rsync -Pruv $SOURCE/Downloads $DEST/
+        rsync -Pruv $SOURCE/Music $DEST/
+        rsync -Pruv $SOURCE/Pictures $DEST/
+        rsync -Pruv $SOURCE/Videos $DEST/
+        rsync -Pruv $SOURCE/.bashrc $DEST/.bashrc
+        
     
         notify-send -a 'File Synchroniser' 'Synchronisation Completed'
         paplay '/usr/share/sounds/ocean/stereo/completion-success.oga' &
