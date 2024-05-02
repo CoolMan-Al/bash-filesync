@@ -7,5 +7,4 @@ A collection of personal bash scripts I use
 - pulseaudio/pipewire-pulse
 - libnotify
 - ocean-sound-theme
-- pacman (replace with package manager)
-- yay (replace with package manager)
+- package manager
