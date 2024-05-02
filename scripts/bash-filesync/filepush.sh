@@ -2,9 +2,9 @@
 
 time {
 
-    SOURCE=/home/$USER
     DIRECTORY=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
     touch $DIRECTORY/ext-drive.txt
+    SOURCE=$(<$DIRECTORY/int-drive.txt)
     DEST=$(<$DIRECTORY/ext-drive.txt)
     
     if [ -z "$DEST" ]; then
@@ -15,11 +15,7 @@ time {
     
     if [ -d $DEST ]; then
         echo -e "\n Pushing Files to Sync Drive/\n=====================================" 
-        rsync -Pruv $SOURCE/Documents $DEST/
-        rsync -Pruv $SOURCE/Downloads $DEST/
-        rsync -Pruv $SOURCE/Code $DEST/
-        rsync -Pruv $SOURCE/.keepassxc $DEST/
-        rsync -Pruv $SOURCE/.bashrc $DEST/.bashrc
+        rsync -Pruv $SOURCE/* $DEST/
     
         notify-send -a 'File Synchroniser' 'Synchronisation Completed'
         paplay '/usr/share/sounds/ocean/stereo/completion-success.oga' &
