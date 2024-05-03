@@ -1,10 +1,8 @@
-# Personal Bash Scripts
-A collection of personal bash scripts I use
+# Bash File Synchronisation
+This is the repo containing the two bash scripts I use to push data between devices
 
 ### Dependencies
-- termdown
 - rsync
 - pulseaudio/pipewire-pulse
 - libnotify
 - ocean-sound-theme
-- package manager
