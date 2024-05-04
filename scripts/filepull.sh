@@ -1,10 +1,9 @@
 #!/bin/bash
-
 time {
-
+    
+    SOURCE=/home/$USER
     DIRECTORY=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
     touch $DIRECTORY/ext-drive.txt
-    SOURCE=$(<$DIRECTORY/int-drive.txt)
     DEST=$(<$DIRECTORY/ext-drive.txt)
     
     if [ -z "$DEST" ]; then
@@ -14,15 +13,8 @@ time {
     fi
     
     if [ -d $DEST ]; then
-        echo -e "\n Pushing Files to Sync Drive/\n=====================================" 
-        #Insert folder name here
-        rsync -Pruv $SOURCE/Documents $DEST/
-        rsync -Pruv $SOURCE/Downloads $DEST/
-        rsync -Pruv $SOURCE/Music $DEST/
-        rsync -Pruv $SOURCE/Pictures $DEST/
-        rsync -Pruv $SOURCE/Videos $DEST/
-        rsync -Pruv $SOURCE/.bashrc $DEST/.bashrc
-        
+        echo -e "\n Pulling Files from Sync Drive\n====================================="
+	rsync -Pruv --exclude 'dir/' $DEST/ $SOURCE/ #Insert directory to exclude from syncrhonisation
     
         notify-send -a 'File Synchroniser' 'Synchronisation Completed'
         paplay '/usr/share/sounds/ocean/stereo/completion-success.oga' &
