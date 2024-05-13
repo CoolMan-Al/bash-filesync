@@ -1,5 +1,5 @@
 # Bash File Synchronisation
-This is the repo containing the two bash scripts I use to push data between devices
+This is the repo containing the two bash scripts I use to push data between devices. I have split each operation script into 2 versions, one inclusion and one exclusion.
 
 ### Dependencies
 - rsync
