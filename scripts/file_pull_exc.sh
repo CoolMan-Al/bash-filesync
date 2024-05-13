@@ -14,7 +14,7 @@ time {
     
     if [ -d $DEST ]; then
         echo -e "\n Pulling Files from Sync Drive\n====================================="
-	rsync -Pruv --exclude 'dir/' $DEST/ $SOURCE/ #Insert directory to exclude from syncrhonisation
+	rsync -Pruv --exclude 'dir1/' --exclude 'dir2/' $DEST/ $SOURCE/ #Insert directory to exclude from syncrhonisation
     
         notify-send -a 'File Synchroniser' 'Synchronisation Completed'
         paplay '/usr/share/sounds/ocean/stereo/completion-success.oga' &
