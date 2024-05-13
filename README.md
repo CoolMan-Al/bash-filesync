@@ -1,8 +1,6 @@
 # Bash File Synchronisation
 This is the repo containing the two bash scripts I use to push data between devices
 
->There is also a .bashrc file containing the aliases to simplify running the synchronisation
-
 ### Dependencies
 - rsync
 - pulseaudio/pipewire-pulse
