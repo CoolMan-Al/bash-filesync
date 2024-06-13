@@ -3,7 +3,7 @@ This is the repo containing the two bash scripts I use to push data between devi
 
 ### Dependencies
 - rsync
-- pulseaudio/pipewire-pulse
+- pipewire
 - libnotify
 - ocean-sound-theme 
 
