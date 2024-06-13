@@ -17,7 +17,7 @@ time {
 	rsync -Pruv --exclude 'dir1/' --exclude 'dir2/' $SOURCE/ $DEST/ #Insert directory to exclude from syncrhonisation
     
         notify-send -a 'File Synchroniser' 'Synchronisation Completed'
-        paplay '/usr/share/sounds/ocean/stereo/completion-success.oga' &
+        pw-play '/usr/share/sounds/ocean/stereo/completion-success.oga' &
     
     else
         echo "Folder not found"
