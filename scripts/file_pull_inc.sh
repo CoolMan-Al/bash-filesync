@@ -24,7 +24,7 @@ time {
         
     
         notify-send -a 'File Synchroniser' 'Synchronisation Completed'
-        paplay '/usr/share/sounds/ocean/stereo/completion-success.oga' &
+        pw-play '/usr/share/sounds/ocean/stereo/completion-success.oga' &
     
     else
         echo "Folder not found"
